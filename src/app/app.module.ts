@@ -1,3 +1,8 @@
+import { TabPage } from './../pages/tab/tab';
+import { SearchPage } from './../pages/search/search';
+import { ProfilePage } from './../pages/profile/profile';
+import { GalleryPage } from './../pages/gallery/gallery';
+import { CreateaccountPage } from './../pages/createaccount/createaccount';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -10,7 +15,13 @@ import { HomePage } from '../pages/home/home';
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    CreateaccountPage,
+    TabPage,
+    GalleryPage,
+    ProfilePage,
+    SearchPage
+  
   ],
   imports: [
     BrowserModule,
@@ -19,7 +30,12 @@ import { HomePage } from '../pages/home/home';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    CreateaccountPage,
+    GalleryPage,
+    ProfilePage,
+    SearchPage,
+    TabPage
   ],
   providers: [
     StatusBar,

@@ -14,3 +14,20 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+
+.toolbar-background {
+    background-image:url("../assets/imgs/insta_bg.png") ;
+  }
+
+  ion-content {
+
+    background-image: url("../assets/imgs/insta_bg2.jpeg");
+
+  }
+
+  ion-tab{
+
+    background-image: url("../assets/imgs/insta_bg2.jpeg") !important;
+
+  }

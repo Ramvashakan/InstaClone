@@ -1,3 +1,49 @@
 page-home {
 
+    .login{
+
+        background-image: url("../assets/imgs/insta_bg.png");
+
+    }
+
+
+    .topic{
+
+        text-align: center;
+        font-size: 30px;
+        font-weight: 500;
+        font-family: Billabong;
+        color: #ffffff;
+
+        
+    }
+
+    ion-item {
+        background: transparent !important;
+    }
+
+    .button{
+
+        height: 40px !important;
+        margin-top: 30px !important;
+        color: #ffffff;
+        text-align: center;
+
+
+    }
+    .signup{
+
+        
+
+    }
+
+    .create{
+
+        margin-left: 20px;
+        color: #ffffff;
+
+    }
+
+
+    
 }
