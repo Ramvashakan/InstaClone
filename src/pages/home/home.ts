@@ -1,3 +1,5 @@
+import { TabPage } from './../tab/tab';
+import { CreateaccountPage } from './../createaccount/createaccount';
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
@@ -11,7 +13,19 @@ export class HomePage {
 
   }
 
+  login(){
 
+    this.navCtrl.push(TabPage);
+
+  }
+  createacc(){
+
+    this.navCtrl.push(CreateaccountPage);
+
+  }
+
+
+  
 
 
 

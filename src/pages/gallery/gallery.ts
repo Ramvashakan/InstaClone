@@ -1,3 +1,4 @@
+import { HomePage } from './../home/home';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
@@ -20,6 +21,12 @@ export class GalleryPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad GalleryPage');
+  }
+
+  back(){
+
+    this.navCtrl.push(HomePage);
+
   }
 
 }

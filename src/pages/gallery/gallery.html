@@ -1,13 +1,21 @@
 
 <ion-header>
   <ion-navbar>
+
+    <ion-buttons left>
+      <button (click)="back()" ion-button> 
+        <ion-icon name ="md-arrow-round-back" ></ion-icon>
+      </button>
+
+   </ion-buttons>
+
     <ion-title>gallery</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding  class="card-background-page">
 
-  <ion-card>
+  <ion-card class ="card">
     <img src="../assets/imgs/img1.jpg"/>
    
   </ion-card>
