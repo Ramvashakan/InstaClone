@@ -1,9 +1,8 @@
-import { HomePage } from './../home/home';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the SearchPage page.
+ * Generated class for the MyprofilePage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -11,24 +10,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-search',
-  templateUrl: 'search.html',
+  selector: 'page-myprofile',
+  templateUrl: 'myprofile.html',
 })
-export class SearchPage {
-
-  items = [];
+export class MyprofilePage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad SearchPage');
-  }
-
-  back(){
-
-    this.navCtrl.push(HomePage);
-
+    console.log('ionViewDidLoad MyprofilePage');
   }
 
 }

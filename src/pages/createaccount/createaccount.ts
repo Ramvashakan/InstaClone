@@ -1,12 +1,7 @@
+import { AngularFireAuth } from 'angularfire2/auth';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, LoadingController, AlertController } from 'ionic-angular';
 
-/**
- * Generated class for the CreateaccountPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -15,11 +10,48 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class CreateaccountPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+
+  email:any;
+  password:any;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+    public AFA:AngularFireAuth,
+    public load:LoadingController,
+    public alrt: AlertController
+
+    ) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CreateaccountPage');
+
   }
 
+  create(){
+
+    let loading = this.load.create({
+
+      spinner:'bubbles',
+      content:'Creating Account'
+    });
+    loading.present();
+    this.AFA.auth.createUserWithEmailAndPassword(this.email,this.password).then(()=>{
+
+      loading.dismiss();
+      let alert = this.alrt.create({
+
+        title:'Success',
+        subTitle:'Account created',
+
+        buttons:[{
+          text:'OK',
+          handler:()=>{
+            this.password = null;
+            this.email = null;
+          }
+        }]
+      });
+      alert.present();
+    });
+  }
 }

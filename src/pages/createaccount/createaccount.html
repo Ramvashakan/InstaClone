@@ -22,20 +22,20 @@
 
     <ion-item class="background">
       <ion-label floating>Enter the Email id</ion-label>
-      <ion-input type="email"></ion-input>
+      <ion-input [(ngModel)] = "email" type="email"></ion-input>
     </ion-item>
   
     <ion-item class="background">
       <ion-label floating>Enter the Password</ion-label>
-      <ion-input type="password"></ion-input>
+      <ion-input [(ngModel)] = "password" type="password"></ion-input>
     </ion-item>
 
     <ion-item class="background">
-      <ion-label floating>Re-Enter the Password</ion-label>
+      <ion-label  floating>Re-Enter the Password</ion-label>
       <ion-input type="password"></ion-input>
     </ion-item>
 
-    <button ion-button class = "button" block color="primary">Create Account</button>
+    <button ion-button  (click)="create()" class = "button" block color="primary">Create Account</button>
 
 
   </ion-list>

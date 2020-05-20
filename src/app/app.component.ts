@@ -1,3 +1,5 @@
+import { TabPage } from './../pages/tab/tab';
+import { AngularFireAuth } from 'angularfire2/auth';
 import { HomePage } from './../pages/home/home';
 import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
@@ -8,15 +10,28 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = HomePage;
+  rootPage:any;
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
+  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen,public AFA:AngularFireAuth) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       statusBar.styleDefault();
       splashScreen.hide();
     });
+
+    AFA.authState.subscribe(res =>{
+
+      if(res && res.uid){
+
+        this.rootPage = TabPage;
+      }
+      else {
+        this.rootPage = HomePage;
+      }
+
+    })
+
   }
 }
 

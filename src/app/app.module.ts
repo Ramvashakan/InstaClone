@@ -1,3 +1,5 @@
+import { MyprofilePage } from './../pages/myprofile/myprofile';
+import { firebaseConfig } from './config';
 import { TabPage } from './../pages/tab/tab';
 import { SearchPage } from './../pages/search/search';
 import { ProfilePage } from './../pages/profile/profile';
@@ -12,6 +14,11 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 
+
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuthModule,AngularFireAuth } from 'angularfire2/auth';
+
+
 @NgModule({
   declarations: [
     MyApp,
@@ -20,12 +27,14 @@ import { HomePage } from '../pages/home/home';
     TabPage,
     GalleryPage,
     ProfilePage,
-    SearchPage
+    SearchPage,
+    MyprofilePage
   
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AngularFireAuthModule,AngularFireModule.initializeApp(firebaseConfig)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -35,11 +44,12 @@ import { HomePage } from '../pages/home/home';
     GalleryPage,
     ProfilePage,
     SearchPage,
-    TabPage
+    TabPage,
+    MyprofilePage
   ],
   providers: [
     StatusBar,
-    SplashScreen,
+    SplashScreen,AngularFireAuth
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

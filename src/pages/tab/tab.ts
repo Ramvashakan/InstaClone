@@ -1,3 +1,4 @@
+import { MyprofilePage } from './../myprofile/myprofile';
 import { SearchPage } from './../search/search';
 import { GalleryPage } from './../gallery/gallery';
 import { ProfilePage } from './../profile/profile';
@@ -22,7 +23,7 @@ export class TabPage {
   profile: any = ProfilePage;
   gallery: any = GalleryPage;
   search: any = SearchPage;
-
+  myprofile:any = MyprofilePage
   constructor(public navCtrl: NavController,public platform:Platform, public navParams: NavParams) {
   }
 
